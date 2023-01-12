@@ -17,7 +17,9 @@ sequenceDiagram
 ## Exercise 6
 ```mermaid
 sequenceDiagram
-    browser->>server: xhttp.onreadystatechange 
-    server-->>browser: notes
-    note over browser: redrawNotes
+    note over onSubmit: preventDefault()
+    onSubmit-->> onSubmit: add note to notes array
+    note over onSubmit: reset form
+    onSubmit-->> onSubmit: redraw notes
+    onSubmit->>server: send note to json
 ```
